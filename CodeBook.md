@@ -1,3 +1,11 @@
+Data source
+
+This dataset is from the "Human Activity Recognition Using Smartphones Data Set" which was originally made avaiable here: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
+Data transformation
+
+I extracted the measurements on the mean and standard deviation for each measurement.
+
 leading t or f is based on time or frequency measurements
 Body = body movement
 Gravity = acceleration of gravity
