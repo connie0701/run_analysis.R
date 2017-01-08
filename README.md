@@ -1,12 +1,17 @@
- ## Download UCI HAR dataset manually then manually choose it by file.choose() while reading files
-  x_train<-read.table(file.choose())
-  y_train<-read.table(file.choose())
-  sub_train<-read.table(file.choose())
-  x_test<-read.table(file.choose())
-  y_test<-read.table(file.choose())
-  sub_test<-read.table(file.choose())
-  features<-read.table(file.choose())
-  actLabels=read.table(file.choose())
+## Download and unzip dataset
+file<-"https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+download.file(file,"./data/Dataset.zip")
+unzip(zipfile="./data/Dataset.zip",exdir="./data")
+
+## Reading files
+  x_train<-read.table(file="C:/Users/conni/Documents/UCI HAR Dataset/train/X_train.txt")
+  y_train<-read.table(file="C:/Users/conni/Documents/UCI HAR Dataset/train/y_train.txt")
+  sub_train<-read.table(file="C:/Users/conni/Documents/UCI HAR Dataset/train/subject_train.txt")
+  x_test<-read.table(file="C:/Users/conni/Documents/UCI HAR Dataset/test/X_test.txt")
+  y_test<-read.table(file="C:/Users/conni/Documents/UCI HAR Dataset/test/y_test.txt")
+  sub_test<-read.table(file="C:/Users/conni/Documents/UCI HAR Dataset/test/subject_test.txt")
+  features<-read.table(file="C:/Users/conni/Documents/UCI HAR Dataset/features.txt")
+  actLabels=read.table(file="C:/Users/conni/Documents/UCI HAR Dataset/activity_labels.txt")
   
  ## Assign column names
   colnames(x_train)<-features[,2]
@@ -33,6 +38,6 @@
   ActNames<-merge(setForMeanStd,actLabels,by='activityID',all.x=T)
   
  ## Create a second tidy data set 
-> TidySet2<-aggregate(.~subjectID+activityID,ActNames,mean)
-> TidySet2<-TidySet2[order(TidySet2$subjectID,TidySet2$activityID),]
-> write.table(TidySet2,"TidySet.txt",row.name=F)
+TidySet2<-aggregate(.~subjectID+activityID,ActNames,mean)
+TidySet2<-TidySet2[order(TidySet2$subjectID,TidySet2$activityID),]
+ write.table(TidySet2,"TidySet.txt",row.name=F)
