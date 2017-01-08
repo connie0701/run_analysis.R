@@ -7,18 +7,29 @@ Data transformation
 I extracted the measurements on the mean and standard deviation for each measurement.
 
 leading t or f is based on time or frequency measurements
+
 Body = body movement
+
 Gravity = acceleration of gravity
+
 Acc = accelerometer measurement
+
 Gyro = gyroscopic measurement
+
 Jerk = sudden movement acceleration
+
 Mag = magnitude of movement
+
 mean: Mean value
+
 std: Standard deviation
+
 ‘XYZ’ is used to denote 3-axial signals in the X, Y and Z directions.
 
 "subjectID"  The ID of the test subject                   
+
 "activityID"  The type of activity  
+
 "tBodyAcc.mean...X"               
 "tBodyAcc.mean...Y"              
  "tBodyAcc.mean...Z"             
